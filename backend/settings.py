@@ -107,11 +107,17 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 
 
 # Database
-# Use dj-database-url to parse database URL from environment (Render sets DATABASE_URL)
+# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3', conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'laundry_p864',
+        'USER': 'laundry_p864_user',
+        'PASSWORD': '0eZULSDRUgGSqPtxs2692IMjDuMHw3Bx',
+        'HOST': 'dpg-d34c9hffte5s73cf6dr0-a.ohio-prd.render.com',
+        'PORT': '5432',
+    }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators

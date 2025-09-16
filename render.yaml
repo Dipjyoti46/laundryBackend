@@ -3,10 +3,12 @@ services:
     name: laundry-backend
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn backend.wsgi"
+    startCommand: "gunicorn backend.wsgi:application --log-file -"
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: backend.settings
+      - key: PYTHONPATH
+        value: .
     autoDeploy: true
     plan: free
     buildFilter:
